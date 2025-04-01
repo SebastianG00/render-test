@@ -1,6 +1,8 @@
 const express = require('express')
 const app = express()
 app.use(express.json())
+//To make epress show static content, we need to tell it where to find the static files.
+app.use(express.static('dist'))
 
 const cors = require('cors')
 app.use(cors())
