@@ -5,13 +5,17 @@
   "scripts": {
     "start": "node index.js",
     "test": "echo \\\"Error: no test specified\\\" && exit 1",
-    "dev": "node --watch index.js"
+    "dev": "node --watch index.js",
+    "build:ui": "rm -rf dist && cd ../client && npm run build && cp -r dist ../backend",
+    "deploy:ui": "npm run build:ui && git add . && git commit -m uibuild && git push"
   },
   "author": "Sebastian G Sheen",
   "license": "MIT",
   "description": "",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.21.2"
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.13.1"
   }
 }
